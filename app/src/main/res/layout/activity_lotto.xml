@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LottoActivity">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="68dp"
+        android:layout_height="66dp"
+        android:layout_gravity="left"
+        android:src="@drawable/boy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Switch
+        android:checked="true"
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="스크롤하여 선택"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+
+        android:id="@+id/numberPicker"
+        android:layout_width="153dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MyBalls" />
+
+    <ImageButton
+        android:id="@+id/addButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toEndOf="@+id/numberPicker"
+        app:layout_constraintTop_toTopOf="@+id/numberPicker" />
+
+    <ImageButton
+        android:id="@+id/clearButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="24dp"
+        android:src="@android:drawable/ic_delete"
+        android:text="초기화"
+        app:layout_constraintStart_toEndOf="@+id/addButton"
+        app:layout_constraintTop_toTopOf="@+id/addButton" />
+
+    <Button
+        android:id="@+id/runButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:text="로또 추첨"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/lottoBalls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/runButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/lottoNum1"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_yellow"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/lottoNum2"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_red"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/lottoNum3"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_blue"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/lottoNum4"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_green"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/lottoNum5"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_gray"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/lottoNum6"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_purple"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/MyBalls"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+        <TextView
+            android:id="@+id/myNum1"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_yellow"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+              android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/myNum2"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_red"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/myNum3"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_blue"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/myNum4"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_green"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/myNum5"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_gray"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/myNum6"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_baseline_circle_purple"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:text="6개 숫자를 선택하세요"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/lottoBalls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberPicker"
+        app:layout_constraintVertical_bias="0.57" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/lottoBalls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/robot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
