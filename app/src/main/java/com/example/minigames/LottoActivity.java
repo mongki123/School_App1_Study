@@ -75,7 +75,57 @@ public class LottoActivity extends AppCompatActivity implements View.OnClickList
             clearMyBalls();
         }
         else if(view.getId() == R.id.runButton) {
+            // 6개의 공을 다 선택하지 않았으면?
+            if(myNumberList.size() != 6) {
+                Toast.makeText(this, "먼저 6개의 공을 선택하세요.", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
+            // 로봇이 6개의 공을 골라서 화면에 표시
+            pickRobotBall();
+            for( int i = 0; i < robotNumberList.size(); i++ ) {
+                robotBall.get(i).setText(Integer.toString(robotNumberList.get(i)));
+                robotBall.get(i).setVisibility(View.VISIBLE);
+            }
+
+            // 몇개가 일치하는지 체크에서 화면에 보이기
+            int win = 0; // 맞은 개수
+            int count = 0; // 시도 횟수
+
+            while( win < 6 ) {
+                win = 0;
+                for (Integer my : myNumberList) {
+                    if (robotNumberList.contains(my)) {
+                        win++;
+                    }
+                }
+                pickRobotBall();
+                count++;
+
+
+            }
+
+            binding.txtResult.setText("당첨개수: " + win + " 시도횟수: " + count);
+            for( int i = 0; i < robotNumberList.size(); i++ ) {
+                robotBall.get(i).setText(Integer.toString(robotNumberList.get(i)));
+                robotBall.get(i).setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+    private void pickRobotBall() {
+        // 초기화
+        robotNumberList.clear();
+
+        int robotNum = 0;
+        Random r = new Random();
+
+        while(robotNumberList.size() < 6) {
+            robotNum = r.nextInt(45) + 1;
+            if(robotNumberList.contains(robotNum)) {
+                continue;
+            }
+            robotNumberList.add(robotNum);
         }
     }
 
